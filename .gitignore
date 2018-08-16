@@ -1,0 +1,8 @@
+node_modules
+dist
+app-dist
+server-dist
+release.zip
+calibration.json
+config.json
+nitro.log

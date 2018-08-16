@@ -1,0 +1,7 @@
+./tslint.json
+./docs
+./app
+./server
+*.zip
+*.tgz
+build.bash

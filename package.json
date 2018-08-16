@@ -1,0 +1,22 @@
+{
+  "name": "quick-form",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublishOnly": "tsc"
+  },
+  "keywords": [],
+  "author": "Drew Youngwerth",
+  "license": "ISC",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.5"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
