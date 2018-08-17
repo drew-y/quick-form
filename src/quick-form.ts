@@ -2,10 +2,15 @@ import Vue from "vue";
 import { customQuickFormVue } from "./quick-form-vue";
 import { QuickFieldTemplate, QuickField } from "./definitions";
 import { bulmaTemplates } from "./templates";
+import { VueToElement } from "./helpers";
 
+/**
+ * Standalone QuickForm class. Allows QuickForm to be
+ * used outside of Vue.
+ */
 export class QuickForm {
     private readonly vue: Vue;
-    readonly element = document.createElement("div");
+    readonly element: HTMLElement;
 
     constructor(fields: QuickField[], templates?: QuickFieldTemplate[]) {
         const formVue = customQuickFormVue(templates ? templates : bulmaTemplates);
@@ -16,9 +21,8 @@ export class QuickForm {
             template: `<form-vue :fields="fields"></form-vue>`,
             data() { return { fields }; }
         });
-
         this.vue = new MainVue();
-        this.vue.$mount(this.element);
+        this.element = VueToElement(this.vue);
     }
 
     on(event: "Submit", cb: (formData: object) => void): this;
