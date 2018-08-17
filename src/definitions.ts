@@ -25,7 +25,7 @@ export interface QuickField<T = any> {
      * Internally, this value is what v-model gets set to on the input. For
      * more information visit: https://vuejs.org/v2/api/#v-model
      */
-    model: string;
+    model?: string;
 
     /** The field is required, defaults to true */
     required?: boolean;
