@@ -18,7 +18,7 @@ function doesntMeetValidator(field: QuickField, value: any): Promise<string | un
 }
 
 // tslint:disable-next-line:variable-name
-export const DefaultTemplateComponent = Vue.extend({
+export const DefaultFieldTemplateComponent = Vue.extend({
     props: {
         value: { required: false },
         field: {

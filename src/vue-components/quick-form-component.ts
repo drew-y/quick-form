@@ -1,9 +1,9 @@
 import Vue, { VueConstructor } from "vue";
 import { QuickField, QuickFieldTemplate } from "../definitions";
-import { DefaultTemplateComponent } from "./default-field-template-component";
-import { bulmaTemplates } from "./templates";
+import { DefaultFieldTemplateComponent } from "./default-field-template-component";
+import { bulmaTemplates } from "../field-templates";
 
-function generateComponents(templates: QuickFieldTemplate[]) {
+function generateFieldComponents(templates: QuickFieldTemplate[]) {
     const components: { [type: string]: VueConstructor } = {};
 
     templates.forEach(templ => {
@@ -11,22 +11,22 @@ function generateComponents(templates: QuickFieldTemplate[]) {
             components[templ.type] = templ.component.extend({ template: templ.template });
         }
 
-        components[templ.type] = DefaultTemplateComponent.extend({ template: templ.template });
+        components[templ.type] = DefaultFieldTemplateComponent.extend({ template: templ.template });
     });
 
     return components;
 }
 
-export function customQuickFormVue(templates: QuickFieldTemplate[]) {
+export function customQuickFormComponent(templates: QuickFieldTemplate[]) {
     return Vue.extend({
         props: {
             fields: {
                 type: Array as () => QuickField[],
                 required: true
-            },
+            }
         },
         template: require("./quick-form.html"),
-        components: generateComponents(templates),
+        components: generateFieldComponents(templates),
 
         data(): {
             formData: object
@@ -43,4 +43,4 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
 }
 
 // tslint:disable-next-line:variable-name
-export const BulmaQuickFormVue = customQuickFormVue(bulmaTemplates);
+export const BulmaQuickFormComponent = customQuickFormComponent(bulmaTemplates);

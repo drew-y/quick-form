@@ -1,7 +1,7 @@
 import Vue from "vue";
-import { customQuickFormVue } from "./vue-components/quick-form-component";
+import { customQuickFormComponent } from "./vue-components/quick-form-component";
 import { QuickFieldTemplate, QuickField } from "./definitions";
-import { bulmaTemplates } from "./templates";
+import { bulmaTemplates } from "./field-templates";
 import { VueToElement } from "./helpers";
 
 /**
@@ -13,7 +13,7 @@ export class QuickForm {
     readonly element: HTMLElement;
 
     constructor(fields: QuickField[], templates?: QuickFieldTemplate[]) {
-        const formVue = customQuickFormVue(templates ? templates : bulmaTemplates);
+        const formVue = customQuickFormComponent(templates ? templates : bulmaTemplates);
 
         // tslint:disable-next-line:variable-name
         const MainVue = Vue.extend({
