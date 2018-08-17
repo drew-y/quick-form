@@ -19,13 +19,14 @@ function generateFieldComponents(templates: QuickFieldTemplate[]) {
 
 export function customQuickFormComponent(templates: QuickFieldTemplate[]) {
     return Vue.extend({
+        name: "QuickForm",
         props: {
             fields: {
                 type: Array as () => QuickField[],
                 required: true
             }
         },
-        template: require("./quick-form.html"),
+        template: require("views/quick-form.html"),
         components: generateFieldComponents(templates),
 
         data(): {
