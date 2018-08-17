@@ -3,7 +3,7 @@
     <div class="control">
         <div class="select">
             <select :value="value" @input="$emit('input', $event.target.value)">
-                <option v-for="option in options" :value="option">{{ option.label }}</option>
+                <option v-for="option in field.options" :value="option.value">{{ option.label }}</option>
             </select>
         </div>
     </div>
