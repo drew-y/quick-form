@@ -1,6 +1,7 @@
 import Vue, { VueConstructor } from "vue";
 import { QuickField, QuickFieldTemplate } from "./definitions";
 import { DefaultTemplateComponent } from "./default-template-vue";
+import { bulmaTemplates } from "./templates";
 
 export function customQuickFormVue(templates: QuickFieldTemplate[]) {
     const components: { [type: string]: VueConstructor } = {};
@@ -26,4 +27,4 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
 }
 
 // tslint:disable-next-line:variable-name
-export const BulmaQuickFormVue = customQuickFormVue([]);
+export const BulmaQuickFormVue = customQuickFormVue(bulmaTemplates);

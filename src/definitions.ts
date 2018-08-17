@@ -62,24 +62,24 @@ export interface QuickInputField<T = any> extends QuickField<T> {
     inputType: "text" | "number" | "password" | "email" | "tel" | "url" | "color";
 }
 
-export interface QuickTextareaField extends QuickField {
+export interface QuickTextareaField<T = any> extends QuickField<T> {
     type: "Textarea";
 }
 
-export interface QuickSelectField extends QuickField {
+export interface QuickSelectField<T = any> extends QuickField<T> {
     type: "Select";
     options: { label: string; value: any }[];
 }
 
-export interface QuickCheckboxField extends QuickField {
+export interface QuickCheckboxField<T = any> extends QuickField<T> {
     type: "Checkbox";
 }
 
-export interface QuickRadioField extends QuickField {
+export interface QuickRadioField<T = any> extends QuickField<T> {
     type: "Radio";
     options: { label: string; value: any }[];
 }
 
-export interface QuickSubmitField extends QuickField {
+export interface QuickSubmitField<T = any> extends QuickField<T> {
     type: "Submit";
 }
