@@ -79,3 +79,11 @@ export interface QuickRadioField extends QuickField {
     type: "Radio";
     options: { label: string; value: any }[];
 }
+
+export interface QuickSubmitField extends QuickField {
+    type: "Submit";
+}
+
+export interface QuickResetField extends QuickField {
+    type: "Reset";
+}

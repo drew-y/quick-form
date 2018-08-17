@@ -1,0 +1,9 @@
+<div class="field">
+    <label v-if="field.label">{{ field.label }}</label>
+    <div class="control">
+        <input v-if="field.inputType === 'number'"
+            :type="field.inputType" class="input" :value="value" @input="$emit('input', Number($event.target.value))">
+        <input v-else
+            :type="field.inputType" class="input" :value="value" @input="$emit('input', $event.target.value)">
+    </div>
+</div>
