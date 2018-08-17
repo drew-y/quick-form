@@ -21,7 +21,7 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
     return Vue.extend({
         props: {
             fields: {
-                type: Object as () => QuickField[],
+                type: Array as () => QuickField[],
                 required: true
             },
         },

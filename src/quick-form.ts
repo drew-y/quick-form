@@ -12,8 +12,8 @@ export class QuickForm {
 
         // tslint:disable-next-line:variable-name
         const MainVue = Vue.extend({
-            components: { formVue },
-            template: `<form-vue fields="fields"></form-fue>`,
+            components: { "form-vue": formVue },
+            template: `<form-vue :fields="fields"></form-vue>`,
             data() { return { fields }; }
         });
 

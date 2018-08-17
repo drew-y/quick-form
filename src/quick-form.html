@@ -1,5 +1,5 @@
 <form @submit.prevent="submit()">
     <template v-for="field in fields">
-        <component :is="field.type" v-model="formData[field.model]" field="field"></component>
+        <component :is="field.type" v-model="formData[field.model]" :field="field"></component>
     </template>
 </form>
