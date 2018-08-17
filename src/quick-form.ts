@@ -18,14 +18,14 @@ export class QuickForm {
         // tslint:disable-next-line:variable-name
         const MainVue = Vue.extend({
             components: { "form-vue": formVue },
-            template: `<form-vue :fields="fields"></form-vue>`,
+            template: `<form-vue :fields="fields" @submit="$emit('submit', $event)"></form-vue>`,
             data() { return { fields }; }
         });
         this.vue = new MainVue();
         this.element = VueToElement(this.vue);
     }
 
-    on(event: "Submit", cb: (formData: object) => void): this;
+    on(event: "submit", cb: (formData: object) => void): this;
     on(event: string, cb: (...args: any[]) => void): this {
         this.vue.$on(event, cb);
         return this;

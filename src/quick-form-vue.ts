@@ -36,8 +36,7 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
 
         methods: {
             submit() {
-                this.$emit("Submit", this.formData);
-                this.$emit("submit", this.formData);
+                this.$emit("submit", { ...this.formData });
             }
         }
     });
