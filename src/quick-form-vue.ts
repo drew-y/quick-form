@@ -3,7 +3,7 @@ import { QuickField, QuickFieldTemplate } from "./definitions";
 import { DefaultTemplateComponent } from "./default-template-vue";
 import { bulmaTemplates } from "./templates";
 
-export function customQuickFormVue(templates: QuickFieldTemplate[]) {
+function generateComponents(templates: QuickFieldTemplate[]) {
     const components: { [type: string]: VueConstructor } = {};
 
     templates.forEach(templ => {
@@ -14,6 +14,10 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
         components[templ.type] = DefaultTemplateComponent.extend({ template: templ.template });
     });
 
+    return components;
+}
+
+export function customQuickFormVue(templates: QuickFieldTemplate[]) {
     return Vue.extend({
         props: {
             fields: {
@@ -22,7 +26,20 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
             },
         },
         template: require("./quick-form.html"),
-        components,
+        components: generateComponents(templates),
+
+        data(): {
+            formData: object
+        } {
+            return { formData: {} };
+        },
+
+        methods: {
+            submit() {
+                this.$emit("Submit", this.formData);
+                this.$emit("submit", this.formData);
+            }
+        }
     });
 }
 
