@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { customQuickFormVue } from "./quick-form-vue";
+import { customQuickFormVue } from "./vue-components/quick-form-component";
 import { QuickFieldTemplate, QuickField } from "./definitions";
 import { bulmaTemplates } from "./templates";
 import { VueToElement } from "./helpers";

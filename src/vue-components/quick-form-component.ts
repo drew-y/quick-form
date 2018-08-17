@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from "vue";
-import { QuickField, QuickFieldTemplate } from "./definitions";
-import { DefaultTemplateComponent } from "./default-template-vue";
+import { QuickField, QuickFieldTemplate } from "../definitions";
+import { DefaultTemplateComponent } from "./default-field-template-component";
 import { bulmaTemplates } from "./templates";
 
 function generateComponents(templates: QuickFieldTemplate[]) {

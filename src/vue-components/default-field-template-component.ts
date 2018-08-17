@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { QuickField } from "./definitions";
+import { QuickField } from "../definitions";
 
 /**
  * Test to see if the field is required and, if so, see if the value is filled.
