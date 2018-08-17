@@ -14,17 +14,14 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
     });
 
     return Vue.extend({
-        props: ["fields"],
-        template: "TODO",
-        components,
-
-        data(): {
-            fields: QuickField[];
-        } {
-            return {
-                fields: []
-            };
+        props: {
+            fields: {
+                type: Object as () => QuickField[],
+                required: true
+            },
         },
+        template: require("views/quick-form.html"),
+        components,
     });
 }
 

@@ -17,6 +17,7 @@
     "webpack": "^4.16.5"
   },
   "dependencies": {
+    "@types/webpack": "^4.4.10",
     "vue": "^2.5.17"
   }
 }
