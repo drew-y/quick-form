@@ -5,3 +5,5 @@
 *.zip
 *.tgz
 build.bash
+tsconfig.json
+tslint.json

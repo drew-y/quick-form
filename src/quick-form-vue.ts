@@ -20,7 +20,7 @@ export function customQuickFormVue(templates: QuickFieldTemplate[]) {
                 required: true
             },
         },
-        template: require("views/quick-form.html"),
+        template: require("./quick-form.html"),
         components,
     });
 }
