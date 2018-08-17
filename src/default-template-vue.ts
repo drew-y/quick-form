@@ -11,7 +11,7 @@ function doesntMeetRequire(field: QuickField, value?: any): string | undefined {
 }
 
 function doesntMeetValidator(field: QuickField, value: any): Promise<string | undefined> {
-    if (!field.validator) return Promise.resolve(undefined);
+    if (!(field.validator instanceof Function)) return Promise.resolve(undefined);
     const result = field.validator(value);
     if (result instanceof Promise) return result;
     return Promise.resolve(result);
