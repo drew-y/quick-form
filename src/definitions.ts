@@ -40,6 +40,8 @@ export interface QuickField<T = any> {
      * If the function returns a string, this.isInvalid will be set to true
      * and the errorMessage will be set to said string.
      *
+     * Note: Will mot work if field has been passed through JSON.stringify.
+     *
      * @param val - The value the user has entered for the field in the form
      */
     validator?(val: T): string | undefined | Promise<string | undefined>;
