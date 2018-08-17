@@ -9,14 +9,17 @@ module.exports = {
     entry: resolve("src", "index.ts"),
     output: {
       path: resolve("dist"),
-      filename: "bundle.js"
+      filename: "bundle.js",
+      library: "",
+      libraryTarget: "umd"
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
       alias: {
-        "vue$": "vue/dist/vue.esm.js"
-      },
+        "vue$": "vue/dist/vue.esm.js",
+      }
     },
+    externals: ["vue"],
     module: {
       rules: [
         {

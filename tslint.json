@@ -41,7 +41,7 @@
         "no-duplicate-switch-case": true,
         "no-eval": true,
         "no-for-in-array": true,
-        "no-implicit-dependencies": [true, ["vue$", "views", "assets", "css", "public"]],
+        "no-implicit-dependencies": [true, ["vue", "views", "assets", "css", "public"]],
         "no-null-keyword": true,
         "no-return-await": true,
         "use-isnan": true,

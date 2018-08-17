@@ -21,7 +21,7 @@
     "webpack-command": "^0.4.1"
   },
   "dependencies": {
-    "@types/webpack": "^4.4.10",
-    "vue": "^2.5.17"
+    "@types/vue": "^2.0.0",
+    "@types/webpack": "^4.4.10"
   }
 }
