@@ -2,7 +2,7 @@
   "name": "quick-form",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack",
     "prepublishOnly": "npm run build"
