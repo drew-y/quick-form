@@ -83,7 +83,3 @@ export interface QuickRadioField extends QuickField {
 export interface QuickSubmitField extends QuickField {
     type: "Submit";
 }
-
-export interface QuickResetField extends QuickField {
-    type: "Reset";
-}
