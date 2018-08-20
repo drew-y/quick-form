@@ -12,7 +12,7 @@ export const QuickForm = Vue.extend({
         document: {
             type: Object,
             required: false,
-            default: {}
+            default: () => ({})
         }
     },
     template: require("views/quick-form.html"),
@@ -20,7 +20,7 @@ export const QuickForm = Vue.extend({
 
     methods: {
         submit() {
-            this.$emit("submit", { ...this.document });
+            this.$emit("submit", JSON.parse(JSON.stringify(this.document)));
         }
     }
 });
