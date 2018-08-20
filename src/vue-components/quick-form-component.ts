@@ -12,16 +12,11 @@ export const QuickForm = Vue.extend({
         document: {
             type: Object,
             required: false,
+            default: {}
         }
     },
     template: require("views/quick-form.html"),
     components: fields,
-
-    data(): {
-        document: object
-    } {
-        return { document: {} };
-    },
 
     methods: {
         submit() {
