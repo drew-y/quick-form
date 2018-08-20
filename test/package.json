@@ -12,5 +12,8 @@
   "dependencies": {
     "quick-form": "file:..",
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }

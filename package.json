@@ -5,7 +5,8 @@
   "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "webpack && cd test && npm i ../ && webpack && http-server"
   },
   "keywords": [],
   "author": "Drew Youngwerth",

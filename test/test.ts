@@ -2,7 +2,7 @@ import { QuickFormVanilla } from "quick-form";
 
 const main = document.getElementById("main")!;
 
-const testForm = new QuickFormVanilla([
+const testForm = new QuickFormVanilla({ fields: [
     { type: "Input", model: "test1", label: "Field 1", inputType: "text" },
     { type: "Input", model: "test2", label: "Field 2", inputType: "text" },
     { type: "Input", model: "test4", label: "Field 4", inputType: "number" },
@@ -22,7 +22,7 @@ const testForm = new QuickFormVanilla([
         ] },
     ]},
     { type: "Submit" }
-]);
+]});
 
 // tslint:disable-next-line:no-console
 testForm.on("submit", (data: object) => console.log(data));
