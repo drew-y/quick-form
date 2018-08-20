@@ -9,7 +9,7 @@ import { VueToElement } from "./helpers";
  * used outside of Vue.
  */
 export class QuickForm {
-    private readonly vue: Vue;
+    readonly vue: Vue;
     readonly element: HTMLElement;
 
     constructor(fields: QuickField[], templates?: QuickFieldTemplate[]) {

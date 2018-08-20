@@ -1,2 +1,3 @@
-export * from "./default-field-template-component";
+export * from "./base-field";
 export * from "./quick-form-component";
+export * from "./fields";

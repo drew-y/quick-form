@@ -1,20 +1,7 @@
 import { VueConstructor } from "vue";
 
-export interface QuickFieldTemplate {
-    /** The corresponding QuickField type */
-    type: string;
-
-    /** The template supplied to the field's component */
-    template: string;
-
-    /**
-     * Optional custom component. Note that QuickForm will override the template value with
-     * this.template
-     */
-    component?: VueConstructor;
-}
-
 export interface QuickField<T = any> {
+    /** The type of field. Equivelent to the name of the field component. */
     type: string;
 
     /**

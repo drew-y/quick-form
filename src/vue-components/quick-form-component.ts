@@ -1,47 +1,28 @@
-import Vue, { VueConstructor } from "vue";
-import { QuickField, QuickFieldTemplate } from "../definitions";
-import { DefaultFieldTemplateComponent } from "./default-field-template-component";
-import { bulmaTemplates } from "../field-templates";
+import Vue from "vue";
+import { QuickField } from "../definitions";
+import { fields } from "./fields";
 
-function generateFieldComponents(templates: QuickFieldTemplate[]) {
-    const components: { [type: string]: VueConstructor } = {};
-
-    templates.forEach(templ => {
-        if (templ.component) {
-            components[templ.type] = templ.component.extend({ template: templ.template });
+export const BaseQuickForm = Vue.extend({
+    name: "QuickForm",
+    props: {
+        fields: {
+            type: Array as () => QuickField[],
+            required: true
         }
+    },
+    template: require("views/quick-form.html"),
 
-        components[templ.type] = DefaultFieldTemplateComponent.extend({ template: templ.template });
-    });
+    data(): {
+        formData: object
+    } {
+        return { formData: {} };
+    },
 
-    return components;
-}
-
-export function customQuickFormComponent(templates: QuickFieldTemplate[]) {
-    return Vue.extend({
-        name: "QuickForm",
-        props: {
-            fields: {
-                type: Array as () => QuickField[],
-                required: true
-            }
-        },
-        template: require("views/quick-form.html"),
-        components: generateFieldComponents(templates),
-
-        data(): {
-            formData: object
-        } {
-            return { formData: {} };
-        },
-
-        methods: {
-            submit() {
-                this.$emit("submit", { ...this.formData });
-            }
+    methods: {
+        submit() {
+            this.$emit("submit", { ...this.formData });
         }
-    });
-}
+    }
+});
 
-// tslint:disable-next-line:variable-name
-export const BulmaQuickFormComponent = customQuickFormComponent(bulmaTemplates);
+export const BulmaQuickForm = BaseQuickForm.extend({ components: fields });
