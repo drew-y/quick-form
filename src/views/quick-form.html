@@ -1,6 +1,15 @@
 <form @submit.prevent="submit()">
     <template v-for="field in fields">
-        <QuickForm v-if="field.type === 'QuickForm'" v-model="formData[field.model]" :fields="field.fields"></QuickForm>
-        <component v-else :is="field.type" v-model="formData[field.model]" :field="field"></component>
+        <QuickForm v-if="field.type === 'QuickForm'"
+            v-model="document[field.model]"
+            :fields="field.fields"
+            @input="$emit('input', document)"
+            style="margin-bottom: 0.5rem;"></QuickForm>
+
+        <component v-else
+            :is="field.type"
+            v-model="document[field.model]"
+            @input="$emit('input', document)"
+            :field="field"></component>
     </template>
 </form>

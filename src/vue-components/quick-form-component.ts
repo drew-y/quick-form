@@ -2,27 +2,30 @@ import Vue from "vue";
 import { QuickField } from "../definitions";
 import { fields } from "./fields";
 
-export const BaseQuickForm = Vue.extend({
+export const QuickForm = Vue.extend({
     name: "QuickForm",
     props: {
         fields: {
             type: Array as () => QuickField[],
             required: true
+        },
+        document: {
+            type: Object,
+            required: false,
         }
     },
     template: require("views/quick-form.html"),
+    components: fields,
 
     data(): {
-        formData: object
+        document: object
     } {
-        return { formData: {} };
+        return { document: {} };
     },
 
     methods: {
         submit() {
-            this.$emit("submit", { ...this.formData });
+            this.$emit("submit", { ...this.document });
         }
     }
 });
-
-export const BulmaQuickForm = BaseQuickForm.extend({ components: fields });

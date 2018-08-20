@@ -1,8 +1,8 @@
-import { QuickForm } from "quick-form";
+import { QuickFormVanilla } from "quick-form";
 
 const main = document.getElementById("main")!;
 
-const testForm = new QuickForm([
+const testForm = new QuickFormVanilla([
     { type: "Input", model: "test1", label: "Field 1", inputType: "text" },
     { type: "Input", model: "test2", label: "Field 2", inputType: "text" },
     { type: "Input", model: "test4", label: "Field 4", inputType: "number" },
