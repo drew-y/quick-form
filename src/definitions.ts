@@ -70,3 +70,8 @@ export interface QuickRadioField<T = any> extends QuickField<T> {
 export interface QuickSubmitField<T = any> extends QuickField<T> {
     type: "Submit";
 }
+
+export interface QuickFormField<T = any> extends QuickField<T> {
+    type: "QuickForm";
+    fields: QuickField[];
+}
