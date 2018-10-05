@@ -1,4 +1,3 @@
-import { VueConstructor } from "vue";
 
 export interface QuickField<T = any> {
     /** The type of field. Equivelent to the name of the field component. */

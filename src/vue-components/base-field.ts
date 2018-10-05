@@ -35,7 +35,7 @@ export const BaseField = Vue.extend({
 
             doesntMeetValidator(this.field, this.value)
                 .then(result => this.$set(this.field, "errorMessage", result))
-                .catch(e => undefined);
+                .catch(_ => undefined);
         });
     }
 });
