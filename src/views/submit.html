@@ -5,4 +5,7 @@
     <div class="control">
         <input type="reset" class="button is-outlined" value="Reset">
     </div>
+    <div class="control" v-if="cancellable">
+        <input type="cancel" class="button is-outlined" value="Cancel">
+    </div>
 </div>

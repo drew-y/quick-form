@@ -13,6 +13,11 @@ export const QuickForm = Vue.extend({
             type: Object,
             required: false,
             default: () => ({})
+        },
+        cancellable: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     template: require("views/quick-form.html"),
