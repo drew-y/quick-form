@@ -18,6 +18,11 @@ export const QuickForm = Vue.extend({
             type: Boolean,
             required: false,
             default: false
+        },
+        resettable: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     template: require("views/quick-form.html"),
