@@ -13,6 +13,16 @@ export const QuickForm = Vue.extend({
             type: Object,
             required: false,
             default: () => ({})
+        },
+        cancellable: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+        resettable: {
+            type: Boolean,
+            required: false,
+            default: true
         }
     },
     template: require("views/quick-form.html"),
@@ -21,6 +31,10 @@ export const QuickForm = Vue.extend({
     methods: {
         submit() {
             this.$emit("submit", JSON.parse(JSON.stringify(this.document)));
+        },
+
+        cancel() {
+            this.$emit("cancel");
         }
     }
 });

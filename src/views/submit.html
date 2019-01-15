@@ -2,7 +2,10 @@
     <div class="control">
         <input type="submit" value="Submit" class="button is-link">
     </div>
-    <div class="control">
-        <input type="reset" class="button is-outlined" value="Reset">
+    <div class="control" v-if="resettable">
+        <input type="reset" value="Reset" class="button is-outlined">
+    </div>
+    <div class="control" v-if="cancellable">
+        <input type="cancel" value="Cancel" @click.prevent="cancel()" class="button is-outlined">
     </div>
 </div>
