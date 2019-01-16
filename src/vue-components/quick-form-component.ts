@@ -17,12 +17,12 @@ export const QuickForm = Vue.extend({
         cancellable: {
             type: Boolean,
             required: false,
-            default: false
+            default: () => false
         },
         resettable: {
             type: Boolean,
             required: false,
-            default: true
+            default: () => true
         }
     },
     template: require("views/quick-form.html"),
