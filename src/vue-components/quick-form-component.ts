@@ -31,10 +31,6 @@ export const QuickForm = Vue.extend({
     methods: {
         submit() {
             this.$emit("submit", JSON.parse(JSON.stringify(this.$props.document)));
-        },
-
-        cancel() {
-            this.$emit("cancel");
         }
     }
 });
