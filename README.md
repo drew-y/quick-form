@@ -17,7 +17,7 @@ Quick HTML forms.
 - Vue 2
 - A module bundler (Webpack, ParcelJS, etc)
 
-`npm i @vb/quick-form`
+`npm i quick-form`
 
 ## Usage Examples
 
