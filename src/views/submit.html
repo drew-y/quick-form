@@ -6,6 +6,6 @@
         <input type="reset" value="Reset" class="button is-outlined">
     </div>
     <div class="control" v-if="this.$parent.cancellable">
-        <input type="cancel" value="Cancel" @click.prevent="this.$parent.cancel()" class="button is-outlined">
+        <input type="button" value="Cancel" @click="$emit('cancel')" class="button is-outlined">
     </div>
 </div>
