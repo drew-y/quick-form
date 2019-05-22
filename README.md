@@ -2,7 +2,8 @@
 
 Quick HTML forms.
 
-Features:
+**Features:**
+
 - Easy to use API
 - Dynamic form generation
 - Supports bulma
@@ -10,7 +11,8 @@ Features:
 
 ## Installation
 
-Pre-requisites:
+**Pre-requisites:**
+
 - Bulma (If using standard quick form fields)
 - Vue 2
 - A module bundler (Webpack, ParcelJS, etc)
@@ -19,7 +21,8 @@ Pre-requisites:
 
 ## Usage Examples
 
-**As a Vue component**
+### As a Vue component
+
 ```typescript
 import Vue from "vue";
 import { QuickForm } from "quick-form";
@@ -51,7 +54,8 @@ const Form = Vue.extend({
 })
 ```
 
-**Standalone**
+### Standalone (Vanilla)
+
 ```typescript
 import Vue from "vue";
 import { QuickFormVanilla } from "quick-form";
@@ -75,17 +79,22 @@ main.appendChild(form);
 <QuickForm :fields="fields"><QuickForm>
 ```
 
-Properties:
+## Properties
+
 - `fields` (Required) An array of QuickField objects representing the form (required). QuickFields are documented later.
 - `document` (Optional) The object the form data is saved to
+- `cancellable` (Optional) Determines whether or not to show the cancel button
+- `resettable` (Optional) Determins whether or not to show the reset button
 
-Events
+## Events
+
 - `submit` Fired when the form is submitted, passes document as the first argument to the callback
 - `input` Fired when the form data is changed, passes document as the first argument to the callback
 
 ## Vanilla Usage
 
 QuickFormVanilla has the following interface:
+
 ```typescript
 class QuickFormVanilla {
     readonly vue: Vue;
@@ -103,7 +112,7 @@ class QuickFormVanilla {
 }
 ```
 
-## Fields:
+## Fields
 
 The following interfaces represent fields that can be passed to QuickForm
 
@@ -183,5 +192,4 @@ export interface QuickFormField<T = any> extends QuickField<T> {
     type: "QuickForm";
     fields: QuickField[];
 }
-
 ```
