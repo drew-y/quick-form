@@ -1,17 +1,19 @@
 <form @submit.prevent="submit()">
     <template v-for="field in fields">
-        <QuickForm v-if="field.type === 'QuickForm'"
-            v-model="document[field.model]"
-            :fields="field.fields"
-            @input="$emit('input', document)"
-            @cancel="$emit('cancel')"
-            style="margin-bottom: 0.5rem;"></QuickForm>
+        <template v-if="shouldShowField(field)">
+            <QuickForm v-if="field.type === 'QuickForm'"
+                v-model="document[field.model]"
+                :fields="field.fields"
+                @input="$emit('input', document)"
+                @cancel="$emit('cancel')"
+                style="margin-bottom: 0.5rem;"></QuickForm>
 
-        <component v-else
-            :is="field.type"
-            v-model="document[field.model]"
-            @input="$emit('input', document)"
-            @cancel="$emit('cancel')"
-            :field="field"></component>
+            <component v-else
+                :is="field.type"
+                v-model="document[field.model]"
+                @input="$emit('input', document)"
+                @cancel="$emit('cancel')"
+                :field="field"></component>
+        </template>
     </template>
 </form>

@@ -29,6 +29,12 @@ export const QuickForm = Vue.extend({
     components: fields,
 
     methods: {
+        shouldShowField(field: QuickField) {
+            if (!field.showIf) return true;
+            const fieldVal = this.$props.document[field.showIf.field];
+            return fieldVal === field.showIf.is;
+        },
+
         submit() {
             this.$emit("submit", JSON.parse(JSON.stringify(this.$props.document)));
         }
