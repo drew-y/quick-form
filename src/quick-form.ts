@@ -9,7 +9,7 @@ import { QuickForm } from "./vue-components";
  */
 export class QuickFormVanilla {
     readonly vue: Vue;
-    readonly element: HTMLElement;
+    readonly element: Element;
 
     constructor({ fields, quickFormComponent }: {
         fields: QuickField[],
