@@ -138,6 +138,12 @@ export interface QuickField<T = any> {
     label?: string;
 
     /**
+     * If the value of the specified value does not equal the value specified
+     * by is, hide this field.
+     */
+    showIf?: { field: string, is: any };
+
+    /**
      * A custom validator for the field. Can be async.
      *
      * If the function returns true, this.isInvalid will be set to true.
