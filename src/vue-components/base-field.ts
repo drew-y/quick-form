@@ -28,7 +28,7 @@ export const BaseField = Vue.extend({
     },
 
     created() {
-        this.$on("Input", () => {
+        this.$on("input", () => {
             this.$set(this.field, "errorMessage", undefined);
             const msg = doesntMeetRequire(this.field, this.value);
             if (msg) return this.$set(this.field, "errorMessage", msg);
