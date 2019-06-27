@@ -1,7 +1,7 @@
 <div class="field">
     <div class="control">
         <label class="checkbox">
-            <input type="checkbox" :value="value" @change="$emit('input', $event.target.value)">
+            <input type="checkbox" :value="value" @change="$emit('input', $event.target.value === 'true')">
             {{ field.label }}
         </label>
     </div>
