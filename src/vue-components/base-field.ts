@@ -27,14 +27,21 @@ export const BaseField = Vue.extend({
         }
     },
 
+    data() {
+        return { errorMessage: undefined as string | undefined };
+    },
+
     created() {
         this.$on("input", () => {
-            this.$set(this.field, "errorMessage", undefined);
+            this.errorMessage = undefined;
             const msg = doesntMeetRequire(this.field, this.value);
-            if (msg) return this.$set(this.field, "errorMessage", msg);
+            if (msg) {
+                this.errorMessage = msg;
+                return;
+            }
 
             doesntMeetValidator(this.field, this.value)
-                .then(result => this.$set(this.field, "errorMessage", result))
+                .then(result => this.errorMessage = result)
                 .catch(_ => undefined);
         });
     }

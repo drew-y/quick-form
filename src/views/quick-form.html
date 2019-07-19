@@ -2,16 +2,16 @@
     <template v-for="field in fields">
         <template v-if="shouldShowField(field)">
             <QuickForm v-if="field.type === 'QuickForm'"
-                v-model="document[field.model]"
+                :document="localDoc[field.model]"
                 :fields="field.fields"
-                @input="$emit('input', document)"
+                @input="handleSubFormInput(field.model, $event)"
                 @cancel="$emit('cancel')"
                 style="margin-bottom: 0.5rem;"></QuickForm>
 
             <component v-else
                 :is="field.type"
-                v-model="document[field.model]"
-                @input="$emit('input', document)"
+                v-model="localDoc[field.model]"
+                @input="$emit('input', localDoc)"
                 @cancel="$emit('cancel')"
                 :field="field"></component>
         </template>

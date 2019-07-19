@@ -27,16 +27,33 @@ export const QuickForm = Vue.extend({
     },
     template: require("views/quick-form.html"),
     components: fields,
+    data() {
+        return { localDoc: JSON.parse(JSON.stringify(this.document)) };
+    },
+
+    watch: {
+        document: {
+            immediate: true,
+            handler(v) {
+                this.localDoc = JSON.parse(JSON.stringify(v));
+            }
+        }
+    },
 
     methods: {
         shouldShowField(field: QuickField) {
             if (!field.showIf) return true;
-            const fieldVal = this.$props.document[field.showIf.field];
+            const fieldVal = this.localDoc[field.showIf.field];
             return fieldVal === field.showIf.is;
         },
 
         submit() {
-            this.$emit("submit", JSON.parse(JSON.stringify(this.$props.document)));
+            this.$emit("submit", this.localDoc);
+        },
+
+        handleSubFormInput(model: string, val: any) {
+            this.localDoc[model] = val;
+            this.$emit("input", this.localDoc);
         }
     }
 });
