@@ -3,6 +3,9 @@ export interface QuickField<T = any> {
     /** The type of field. Equivelent to the name of the field component. */
     type: string;
 
+    /** Default value of the field */
+    default?: T;
+
     /**
      * When a user sumbits a quick form, the instance will emit a submit event
      * that returns an object with all the values the user supplied. model represents

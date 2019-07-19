@@ -32,6 +32,10 @@ export const BaseField = Vue.extend({
     },
 
     created() {
+        if (this.field.default !== undefined && this.value === undefined) {
+            this.$emit("input", this.field.default);
+        }
+
         this.$on("input", () => {
             this.errorMessage = undefined;
             const msg = doesntMeetRequire(this.field, this.value);
