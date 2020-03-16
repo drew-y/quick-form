@@ -13,16 +13,16 @@
   "license": "ISC",
   "types": "./src/index.ts",
   "devDependencies": {
-    "circular-dependency-plugin": "^5.0.2",
+    "circular-dependency-plugin": "^5.2.0",
     "html-loader": "^0.5.5",
-    "ts-loader": "^4.4.2",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
-    "webpack": "^4.16.5",
-    "webpack-command": "^0.4.1"
+    "ts-loader": "^4.5.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-command": "^0.4.2"
   },
   "dependencies": {
-    "@types/webpack": "^4.4.10",
-    "vue": "^2.6.10"
+    "@types/webpack": "^4.41.7",
+    "vue": "^2.6.11"
   }
 }
