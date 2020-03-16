@@ -84,7 +84,7 @@ main.appendChild(form);
 - `fields` (Required) An array of QuickField objects representing the form (required). QuickFields are documented later.
 - `document` (Optional) The object the form data is saved to
 - `cancellable` (Optional) Determines whether or not to show the cancel button
-- `resettable` (Optional) Determins whether or not to show the reset button
+- `resettable` (Optional) Determines whether or not to show the reset button
 
 ## Events
 
@@ -118,14 +118,14 @@ The following interfaces represent fields that can be passed to QuickForm
 
 ```typescript
 export interface QuickField<T = any> {
-    /** The type of field. Equivelent to the name of the field component. */
+    /** The type of field. Equivalent to the name of the field component. */
     type: string;
 
     /** Default value of the field */
     default?: T;
 
     /**
-     * When a user sumbits a quick form, the instance will emit a submit event
+     * When a user submits a quick form, the instance will emit a submit event
      * that returns an object with all the values the user supplied. model represents
      * the field of that object the QuickField value will be attached to.
      *
