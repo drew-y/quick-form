@@ -19,7 +19,7 @@
     "tslint": "^5.20.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
-    "webpack-command": "^0.4.2"
+    "webpack-command": "^0.5.1"
   },
   "dependencies": {
     "@types/webpack": "^4.41.7",
